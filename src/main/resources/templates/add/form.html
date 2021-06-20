@@ -3,14 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Enter numbers</title>
+  <script type = "text/javascript">
+    function validate() {
+      var t1 = document.forms["numbers"]["n1"].value;
+      var t2 = document.forms["numbers"]["n2"].value;
+      var t3 = Number.MAX_SAFE_INTEGER;
+      if( t1+t2 > t3) {
+        alert( "Please select smaller numbers!" );
+        document.numbers.n1.focus() ;
+        return false;
+      }
+      return( true );
+
+    }
+  </script>
 </head>
 <body>
 
 <h2>Enter numbers to add up</h2>
-<form action="#" th:action="@{/add}" th:object="${sum}" method="post">
+<form action="#" name ="numbers"  th:action="@{/add}" th:object="${sum}" method="post" onsubmit = "return validate();">
 
-  <p> Number 1 : <input type="text" th:field="*{n1}" /></p>
-  <p> Number 2 : <input type="text" th:field="*{n2}" /></p>
+  <p> Number 1 : <input name="n1" type="text" th:field="*{n1}" /></p>
+  <p> Number 2 : <input name="n2" type="text" th:field="*{n2}" /></p>
   <p><input type="submit" value="Sum Up" /></p>
 
 </form>

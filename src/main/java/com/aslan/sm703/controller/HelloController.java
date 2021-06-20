@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class Sm703Controller {
+public class HelloController {
     @RequestMapping("/")
     String welcome(Model model){
         model.addAttribute("message","Hello Spring!");

@@ -7,7 +7,7 @@
     function validate() {
       var s1 = document.forms["numbers"]["n1"].value;
       var s2 = document.forms["numbers"]["n2"].value;
-      var max = 9223372036854775807;
+      var max = Number.MAX_SAFE_INTEGER;
       if( Number(s1)+Number(s2) > max) {
         alert( "Please select smaller numbers!" );
         document.numbers.n1.focus() ;

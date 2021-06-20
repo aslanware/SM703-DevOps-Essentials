@@ -5,10 +5,10 @@
   <title>Enter numbers</title>
   <script type = "text/javascript">
     function validate() {
-      var t1 = document.forms["numbers"]["n1"].value;
-      var t2 = document.forms["numbers"]["n2"].value;
-      var t3 = Number.MAX_SAFE_INTEGER;
-      if( t1+t2 > t3) {
+      var s1 = document.forms["numbers"]["n1"].value;
+      var s2 = document.forms["numbers"]["n2"].value;
+      var max = 9223372036854775807;
+      if( Number(s1)+Number(s2) > max) {
         alert( "Please select smaller numbers!" );
         document.numbers.n1.focus() ;
         return false;
